@@ -83,4 +83,10 @@
 	$csvData = "{$_POST[name1]};{$_POST[name2]};{$_POST[name3]};{$_POST[item]};{$_POST[quantity]};{$_POST[comment]};{$_totalPrice}\r\n";
 	file_put_contents( $csvFile, $csvData, FILE_APPEND );
 ?>
+<?php
+	require 'connect.php';
+	$strSQL = "INSERT INTO orders (name1, name2, name3, item, quantity, comment)" .
+	"VALUES('{$_POST['name1']}', '{$_POST['name2']}', '{$_POST['name3']}', '{$_POST['item']}', '{$_POST['quantity']}', '{$_POST['comment']}');";
+	mysql_query($strSQL);
+ ?>
 </html>
