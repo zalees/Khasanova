@@ -97,5 +97,11 @@
 	<?php
     }
 	?>
+	<?php
+	require 'connect.php';
+	$strSQL = "INSERT INTO users (email, password, name1, name2, name3)" .
+	"VALUES('{$_POST['email']}', '{$_POST['password']}', '{$_POST['name1']}', '{$_POST['name2']}', '{$_POST['name3']}');";
+	mysql_query($strSQL);
+?>
 </body>
 </html>
